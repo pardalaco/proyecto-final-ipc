@@ -26,7 +26,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
         title: const Text("Detalles del producto"),
       ),
       body: Container(
-        color: Colors.grey,
+        color: Colors.blue.shade50,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -77,20 +77,81 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "${widget.price}€",
-                      style: const TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
                       widget.description,
                       textAlign: TextAlign.justify,
                       style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.normal,
                       ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          "${widget.price}€",
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                        const Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            // Acción al hacer clic en el contenedor "Añadir a la cesta"
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 8, right: 16),
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Color.fromARGB(192, 33, 149, 243),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(25),
+                                bottomLeft: Radius.circular(25),
+                              ),
+                            ),
+                            child: Row(
+                              children: const [
+                                Icon(
+                                  Icons.add_shopping_cart,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Añadir a la cesta',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            // Acción al hacer clic en el contenedor "Reserva ya"
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(left: 16, right: 8),
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.secondary,
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(25),
+                                bottomRight: Radius.circular(25),
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Reserva ya',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
