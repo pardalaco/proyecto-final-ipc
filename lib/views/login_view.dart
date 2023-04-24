@@ -35,15 +35,15 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Login",
+                        "Travel World",
                         style: TextStyle(
-                            fontSize: 50, fontWeight: FontWeight.w600),
+                            fontSize: 35, fontWeight: FontWeight.w600),
                       ),
                       const Spacer(),
-                      _circle(50, 50,
-                          const EdgeInsets.only(left: 5, right: 5, top: 5)),
-                      _circle(90, 90, const EdgeInsets.only()),
-                      _circle(25, 25, const EdgeInsets.only(right: 3)),
+                      Image.asset(
+                        'assets/img/logo.png',
+                        //width: 30,
+                      ),
                     ])),
             _LoginBox(),
             Padding(
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
       margin: myEdgeInsests,
       decoration: BoxDecoration(
         boxShadow: [_shadow()],
-        color: Colors.purple,
+        color: Colors.blue,
         shape: BoxShape.circle,
       ),
     );
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
       width: 180,
       height: 45,
       decoration: const BoxDecoration(
-        color: Colors.purple,
+        color: Colors.blue,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(25.0),
           bottomLeft: Radius.circular(25.0),

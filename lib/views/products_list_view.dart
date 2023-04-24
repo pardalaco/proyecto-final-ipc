@@ -13,12 +13,9 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Productos"),
-        ),
         body: ListView.builder(
-          itemCount: widget.productsJson.length,
-          itemBuilder: (context, i) => widget.productsJson[i],
-        ));
+      itemCount: widget.productsJson.length,
+      itemBuilder: (context, i) => widget.productsJson[i],
+    ));
   }
 }
