@@ -33,12 +33,21 @@ class _ProductsPageState extends State<ProductsPage> {
               onTap: () {},
             ),
             const Spacer(),
-            ListTile(
-              title: const Center(
-                child: Text('Sing out'),
+            Container(
+              color: Colors.black,
+              child: ListTile(
+                title: const Center(
+                  child: Text(
+                    'Log out',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.popUntil(
+                      context, ModalRoute.withName(Navigator.defaultRouteName));
+                },
               ),
-              onTap: () {},
-            )
+            ),
           ],
         ),
       ),
