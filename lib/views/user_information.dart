@@ -61,6 +61,7 @@ class UserInfoScreen extends StatelessWidget {
           ],
         ),
       ),
+      backgroundColor: Colors.transparent,
     );
   }
 }

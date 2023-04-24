@@ -14,28 +14,15 @@ class _ProductsPageState extends State<ProductsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: const Text("Home"),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.person),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => UserInfoScreen(
-                      userName: "Daniel Rovira",
-                      userEmail: "drovmar@upv.com",
-                    ),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-        body: ListView.builder(
-          itemCount: widget.productsJson.length,
-          itemBuilder: (context, i) => widget.productsJson[i],
-        ));
+      appBar: AppBar(
+        //automaticallyImplyLeading: false,
+        title: const Text("Home"),
+      ),
+      drawer: Drawer(),
+      body: ListView.builder(
+        itemCount: widget.productsJson.length,
+        itemBuilder: (context, i) => widget.productsJson[i],
+      ),
+    );
   }
 }
