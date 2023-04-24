@@ -18,7 +18,30 @@ class _ProductsPageState extends State<ProductsPage> {
         //automaticallyImplyLeading: false,
         title: const Text("Home"),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: const Text("Daniel Rovira"),
+              accountEmail: const Text("drovmar@upv.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/img/profile.png'),
+              ),
+            ),
+            ListTile(
+              title: const Text('User Information'),
+              onTap: () {},
+            ),
+            const Spacer(),
+            ListTile(
+              title: const Center(
+                child: Text('Sing out'),
+              ),
+              onTap: () {},
+            )
+          ],
+        ),
+      ),
       body: ListView.builder(
         itemCount: widget.productsJson.length,
         itemBuilder: (context, i) => widget.productsJson[i],
