@@ -24,8 +24,8 @@ class _ProductsPageState extends State<ProductsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => UserInfoScreen(
-                      userName: "John Doe",
-                      userEmail: "johndoe@example.com",
+                      userName: "Daniel Rovira",
+                      userEmail: "drovmar@upv.com",
                     ),
                   ),
                 );

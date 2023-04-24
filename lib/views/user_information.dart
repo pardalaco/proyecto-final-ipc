@@ -12,24 +12,54 @@ class UserInfoScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("User Information"),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "Name: $userName",
-              style: TextStyle(fontSize: 20),
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF4169E1),
+              Color(0xFF87CEFA),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "Email: $userEmail",
-              style: TextStyle(fontSize: 20),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/profile.png'),
+                radius: 50,
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Name: $userName",
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "Email: $userEmail",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontFamily: 'Roboto',
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
