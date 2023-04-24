@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:drovmar_pfinal/views/user_information.dart';
+import 'package:drovmar_pfinal/future/drawer.dart';
 
 class ProductsPage extends StatefulWidget {
   final List productsJson;
@@ -18,39 +18,7 @@ class _ProductsPageState extends State<ProductsPage> {
         //automaticallyImplyLeading: false,
         title: const Text("Home"),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: const Text("Daniel Rovira"),
-              accountEmail: const Text("drovmar@upv.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/img/profile.png'),
-              ),
-            ),
-            ListTile(
-              title: const Text('User Information'),
-              onTap: () {},
-            ),
-            const Spacer(),
-            Container(
-              color: Colors.black,
-              child: ListTile(
-                title: const Center(
-                  child: Text(
-                    'Log out',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.popUntil(
-                      context, ModalRoute.withName(Navigator.defaultRouteName));
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+      drawer: const DrawerWidget(),
       body: ListView.builder(
         itemCount: widget.productsJson.length,
         itemBuilder: (context, i) => widget.productsJson[i],
