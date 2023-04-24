@@ -76,6 +76,29 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                       ),
                     ),
                     const SizedBox(height: 10),
+                    Row(
+                      children: const [
+                        Icon(Icons
+                            .location_on), // se añade el icono de ubicación
+                        Text(
+                          "italia", // se muestra la ubicación del producto
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      "Detalles del viaje",
+                      style: const TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    const SizedBox(height: 10),
                     Text(
                       widget.description,
                       textAlign: TextAlign.justify,
@@ -84,7 +107,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    //const SizedBox(height: double.infinity),
                     Row(
                       children: [
                         Text(
@@ -132,7 +155,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                             // Acción al hacer clic en el contenedor "Reserva ya"
                           },
                           child: Container(
-                            padding: EdgeInsets.only(left: 16, right: 8),
+                            padding: const EdgeInsets.only(left: 16, right: 8),
                             height: 50,
                             decoration: BoxDecoration(
                               color: Theme.of(context).colorScheme.secondary,
