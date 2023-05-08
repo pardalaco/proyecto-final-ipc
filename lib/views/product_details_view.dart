@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'book_trips.dart';
 
 class ProductsDetails extends StatefulWidget {
   final String iconPath;
@@ -24,6 +25,17 @@ class _ProductsDetailsState extends State<ProductsDetails> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Detalles del producto"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BookTrips()),
+              );
+            },
+          ),
+        ],
       ),
       body: Container(
         color: Colors.blue.shade50,
@@ -82,13 +94,31 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                             .location_on), // se añade el icono de ubicación
                         Text(
                           "italia", // se muestra la ubicación del producto
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
                       ],
                     ),
+                    Row(
+                      children: [
+                        for (int i = 0; i < 5; i++)
+                          const Icon(
+                            Icons.star,
+                            color: Colors.yellow,
+                          ),
+                        const SizedBox(width: 5),
+                        const Text(
+                          "5",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+
                     const SizedBox(height: 10),
                     const Text(
                       "Detalles del viaje",

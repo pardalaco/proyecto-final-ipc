@@ -8,9 +8,9 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
-            accountName: const Text("Daniel Rovira"),
-            accountEmail: const Text("drovmar@upv.com"),
+          const UserAccountsDrawerHeader(
+            accountName: Text("Daniel Rovira"),
+            accountEmail: Text("drovmar@upv.com"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage('assets/img/profile.png'),
             ),
