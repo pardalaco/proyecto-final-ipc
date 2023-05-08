@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drovmar_pfinal/future/drawer.dart';
+import 'details_trip.dart';
 
 class BookTrips extends StatefulWidget {
   const BookTrips({
@@ -52,7 +53,15 @@ class _BookTrips extends State<BookTrips> {
                 Text('Fecha: ${trip['date']} - Personas: ${trip['people']}'),
             trailing: Text('\$${trip['price']}'),
             onTap: () {
-              // Aquí podrías agregar la navegación a una pantalla de detalles de reserva
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DetailsTrip(
+                        heroTag: 'description',
+                        iconPath: 'image',
+                        price: 3,
+                        description: "loremipsum")),
+              );
               print('Tocaste el viaje reservado número ${i + 1}');
             },
           );
