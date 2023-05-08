@@ -174,13 +174,31 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                             child: const Icon(Icons.add, color: Colors.white),
                           ),
                         ),
+                        const SizedBox(height: 10),
+                        const Padding(
+                            padding: EdgeInsets.only(left: 10.0),
+                            child: Text(
+                              "Nº noches",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
                       ],
+                    ),
+                    const SizedBox(height: 10),
+
+                    Text(
+                      "${widget.price}€/noche",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                      ),
                     ),
 
                     const SizedBox(height: 10),
                     const Text(
                       "Detalles del viaje",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 25.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -201,7 +219,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                     Row(
                       children: [
                         Text(
-                          "${widget.price}€",
+                          "${(widget.price * _count).toStringAsFixed(2)}€",
                           style: TextStyle(
                             fontSize: 25.0,
                             fontWeight: FontWeight.bold,
