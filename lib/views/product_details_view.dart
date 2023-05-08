@@ -20,6 +20,22 @@ class ProductsDetails extends StatefulWidget {
 }
 
 class _ProductsDetailsState extends State<ProductsDetails> {
+  int _count = 0;
+
+  void _incrementCount() {
+    setState(() {
+      _count++;
+    });
+  }
+
+  void _decrementCount() {
+    setState(() {
+      if (_count > 0) {
+        _count--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,6 +135,48 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                       ],
                     ),
 
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _decrementCount();
+                          },
+                          child: Container(
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              color: Colors
+                                  .blue, // se agrega el color azul al fondo del botón
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child:
+                                const Icon(Icons.remove, color: Colors.white),
+                          ),
+                        ),
+                        const SizedBox(width: 20.0),
+                        Text(
+                          '$_count',
+                          style: TextStyle(fontSize: 24.0),
+                        ),
+                        const SizedBox(width: 20.0),
+                        GestureDetector(
+                          onTap: () {
+                            _incrementCount();
+                          },
+                          child: Container(
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              color: Colors
+                                  .blue, // se agrega el color azul al fondo del botón
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: const Icon(Icons.add, color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+
                     const SizedBox(height: 10),
                     const Text(
                       "Detalles del viaje",
@@ -138,6 +196,8 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                       ),
                     ),
                     //const SizedBox(height: double.infinity),
+                    const SizedBox(height: 50),
+
                     Row(
                       children: [
                         Text(
