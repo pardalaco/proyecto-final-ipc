@@ -48,10 +48,13 @@ class FutureJson extends StatelessWidget {
                   onTap: () {
                     var route = MaterialPageRoute(
                       builder: (context) => ProductsDetails(
-                          heroTag: p.name,
-                          iconPath: p.image,
-                          price: p.price,
-                          description: p.description),
+                        heroTag: p.name,
+                        location: p.location,
+                        iconPath: p.image,
+                        price: p.price,
+                        description: p.description,
+                        stars: p.stars,
+                      ),
                     );
                     Navigator.of(context).push(route);
                   },

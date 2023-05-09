@@ -3,16 +3,20 @@ import 'book_trips.dart';
 
 class ProductsDetails extends StatefulWidget {
   final String iconPath;
+  final String location;
   final String heroTag;
   final double price;
   final String description;
+  final int stars;
 
   const ProductsDetails({
     super.key,
     required this.heroTag,
+    required this.location,
     required this.iconPath,
     required this.price,
     required this.description,
+    required this.stars,
   });
 
   @override
@@ -105,12 +109,12 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                     ),
                     const SizedBox(height: 10),
                     Row(
-                      children: const [
-                        Icon(Icons
+                      children: [
+                        const Icon(Icons
                             .location_on), // se añade el icono de ubicación
                         Text(
-                          "italia", // se muestra la ubicación del producto
-                          style: TextStyle(
+                          widget.location,
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.normal,
                           ),
@@ -119,15 +123,20 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                     ),
                     Row(
                       children: [
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < widget.stars; i++)
                           const Icon(
                             Icons.star,
                             color: Colors.yellow,
                           ),
+                        for (int i = 0; i < 5 - widget.stars; i++)
+                          const Icon(
+                            Icons.star_border,
+                            color: Colors.yellow,
+                          ),
                         const SizedBox(width: 5),
-                        const Text(
-                          "5",
-                          style: TextStyle(
+                        Text(
+                          widget.stars.toString(),
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.normal,
                           ),

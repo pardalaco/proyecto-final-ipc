@@ -15,20 +15,26 @@ class Products {
 
 class Product {
   late String name;
+  late String location;
   late double price;
   late String image;
   late String description;
+  late int stars;
 
   Product(
       {required this.name,
+      required this.location,
       required this.price,
       required this.image,
-      required this.description});
+      required this.description,
+      required this.stars});
 
   Product.fromJson(Map<String, dynamic> json) {
     name = json['name'];
+    location = json['location'];
     price = json['price'];
     image = json['image'];
     description = json['description'];
+    stars = json['stars'];
   }
 }
