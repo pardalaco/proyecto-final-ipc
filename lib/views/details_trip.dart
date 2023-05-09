@@ -87,12 +87,12 @@ class _DetailsTrip extends State<DetailsTrip> {
                     ),
                     const SizedBox(height: 10),
                     Row(
-                      children: const [
-                        Icon(Icons
+                      children: [
+                        const Icon(Icons
                             .location_on), // se añade el icono de ubicación
                         Text(
-                          "italia", // se muestra la ubicación del producto
-                          style: TextStyle(
+                          widget.location,
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.normal,
                           ),
@@ -101,15 +101,20 @@ class _DetailsTrip extends State<DetailsTrip> {
                     ),
                     Row(
                       children: [
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < widget.stars; i++)
                           const Icon(
                             Icons.star,
                             color: Colors.yellow,
                           ),
+                        for (int i = 0; i < 5 - widget.stars; i++)
+                          const Icon(
+                            Icons.star_border,
+                            color: Colors.yellow,
+                          ),
                         const SizedBox(width: 5),
-                        const Text(
-                          "5",
-                          style: TextStyle(
+                        Text(
+                          widget.stars.toString(),
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.normal,
                           ),
@@ -117,16 +122,16 @@ class _DetailsTrip extends State<DetailsTrip> {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'Fecha de entrada: 10 de julio de 2023', //Texto con la fecha de salida
-                      style: TextStyle(
+                    Text(
+                      'Fecha de entrada: ${widget.entry_date}', //Texto con la fecha de salida
+                      style: const TextStyle(
                         fontSize: 16.0,
                       ),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'Fecha de salida: 12 de julio de 2023', //Texto con la fecha de salida
-                      style: TextStyle(
+                    Text(
+                      'Fecha de salida: ${widget.departure_date}', //Texto con la fecha de salida
+                      style: const TextStyle(
                         fontSize: 16.0,
                       ),
                     ),

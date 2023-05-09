@@ -1,12 +1,12 @@
 {
     "reservas": [
     {
-        "name" : "The Grand Budapest Hotel",
-        "location" : "Budapest",
-        "price" : 120.50,
-        "image" : "assets/img/Budapest.jpg",
-        "description" : "Welcome to The Grand Budapest Hotel, where luxury meets tradition. Our hotel is located in the heart of Budapest, just minutes away from all the major attractions. Our spacious rooms and suites are elegantly decorated and offer stunning views of the city. Our restaurants serve the finest cuisine, and our spa and fitness center provide a serene retreat for our guests. Come and experience the grandeur of Budapest at The Grand Budapest Hotel.",
-        "stars" : 5,
+        "name" : "Paris Palace",
+        "location" : "Paris",
+        "price" : 99.99,
+        "image" : "assets/img/Paris.jpg",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet magna ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+        "stars" : 4,
         "nigths" : 3,
         "entry_date" : "15/06/2023",
         "departure_date" : "18/06/2023"
