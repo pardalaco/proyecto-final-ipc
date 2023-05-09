@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'details_trip.dart';
 
 class BookTrips extends StatefulWidget {
   final List reservasJson;

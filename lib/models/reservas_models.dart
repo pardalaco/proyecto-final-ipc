@@ -21,8 +21,8 @@ class Reserva {
   late String description;
   late int stars;
   late int nigths;
-  late String entry_date;
-  late String departure_date;
+  late String entryDate;
+  late String departureDate;
 
   Reserva({
     required this.name,
@@ -32,8 +32,8 @@ class Reserva {
     required this.description,
     required this.stars,
     required this.nigths,
-    required this.entry_date,
-    required this.departure_date,
+    required this.entryDate,
+    required this.departureDate,
   });
 
   Reserva.fromJson(Map<String, dynamic> json) {
@@ -44,7 +44,7 @@ class Reserva {
     description = json['description'];
     stars = json['stars'];
     nigths = json['nigths'];
-    entry_date = json['entry_date'];
-    departure_date = json['departure_date'];
+    entryDate = json['entryDate'];
+    departureDate = json['departureDate'];
   }
 }

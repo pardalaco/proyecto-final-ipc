@@ -165,7 +165,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                         const SizedBox(width: 20.0),
                         Text(
                           '$_count',
-                          style: TextStyle(fontSize: 24.0),
+                          style: const TextStyle(fontSize: 24.0),
                         ),
                         const SizedBox(width: 20.0),
                         GestureDetector(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'book_trips.dart';
 
 class DetailsTrip extends StatefulWidget {
   final String iconPath;
@@ -9,8 +8,8 @@ class DetailsTrip extends StatefulWidget {
   final String description;
   late int stars;
   final int nigths;
-  final String entry_date;
-  final String departure_date;
+  final String entryDate;
+  final String departureDate;
 
   DetailsTrip(
       {super.key,
@@ -21,8 +20,8 @@ class DetailsTrip extends StatefulWidget {
       required this.location,
       required this.nigths,
       required this.stars,
-      required this.entry_date,
-      required this.departure_date});
+      required this.entryDate,
+      required this.departureDate});
 
   @override
   State<DetailsTrip> createState() => _DetailsTrip();
@@ -123,14 +122,14 @@ class _DetailsTrip extends State<DetailsTrip> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Fecha de entrada: ${widget.entry_date}', //Texto con la fecha de salida
+                      'Fecha de entrada: ${widget.entryDate}', //Texto con la fecha de salida
                       style: const TextStyle(
                         fontSize: 16.0,
                       ),
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Fecha de salida: ${widget.departure_date}', //Texto con la fecha de salida
+                      'Fecha de salida: ${widget.departureDate}', //Texto con la fecha de salida
                       style: const TextStyle(
                         fontSize: 16.0,
                       ),
