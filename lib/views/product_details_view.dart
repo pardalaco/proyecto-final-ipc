@@ -44,7 +44,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Detalles del producto"),
+        title: const Text("Detalles del viaje"),
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart),
@@ -199,7 +199,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
 
                     Text(
                       "${widget.price}€/noche",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20.0,
                       ),
                     ),

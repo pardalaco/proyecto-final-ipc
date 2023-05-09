@@ -73,6 +73,21 @@ class FutureJson extends StatelessWidget {
                         Text(
                           p.name,
                         ),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.location_on,
+                              size: 15,
+                            ), // se añade el icono de ubicación
+                            Text(
+                              p.location,
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
                           "${p.price}€",
                           style: TextStyle(
