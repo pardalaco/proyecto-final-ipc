@@ -107,6 +107,20 @@ class _DetailsTrip extends State<DetailsTrip> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Fecha de entrada: 10 de julio de 2023', //Texto con la fecha de salida
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Fecha de salida: 12 de julio de 2023', //Texto con la fecha de salida
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
 
                     const SizedBox(height: 10),
                     const Text(
@@ -147,7 +161,7 @@ class _DetailsTrip extends State<DetailsTrip> {
                           label: Row(
                             children: const [
                               SizedBox(width: 10),
-                              const Text(
+                              Text(
                                 "Cancelar reserva",
                                 style: TextStyle(color: Colors.white),
                               ),

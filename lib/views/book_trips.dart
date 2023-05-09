@@ -40,7 +40,7 @@ class _BookTrips extends State<BookTrips> {
     return Scaffold(
       appBar: AppBar(
         //automaticallyImplyLeading: false,
-        title: const Text("Home"),
+        title: const Text("Viajes reservados"),
       ),
       body: ListView.builder(
         itemCount: _bookedTrips.length,

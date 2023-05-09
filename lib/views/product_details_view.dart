@@ -227,59 +227,45 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                           ),
                         ),
                         const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            // Acción al hacer clic en el contenedor "Añadir a la cesta"
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            // Aquí va la función que se ejecutará al presionar el botón
                           },
-                          child: Container(
-                            padding: const EdgeInsets.only(left: 8, right: 16),
-                            height: 50,
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(192, 33, 149, 243),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                bottomLeft: Radius.circular(25),
+                          label: Row(
+                            children: const [
+                              SizedBox(width: 10),
+                              Text(
+                                "Añadir a la cesta",
+                                style: TextStyle(color: Colors.white),
                               ),
-                            ),
-                            child: Row(
-                              children: const [
-                                Icon(
-                                  Icons.add_shopping_cart,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(width: 5),
-                                Text(
-                                  'Añadir a la cesta',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
+                            ],
+                          ),
+                          icon: const Icon(Icons.add_shopping_cart,
+                              color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                Colors.blue, // color de fondo del botón
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            // Acción al hacer clic en el contenedor "Reserva ya"
+                        const SizedBox(width: 10),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            // Aquí va la función que se ejecutará al presionar el botón
                           },
-                          child: Container(
-                            padding: const EdgeInsets.only(left: 16, right: 8),
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.secondary,
-                              borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
+                          label: Row(
+                            children: const [
+                              SizedBox(width: 10),
+                              Text(
+                                "Reservar",
+                                style: TextStyle(color: Colors.white),
                               ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Reserva ya',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
+                            ],
+                          ),
+                          icon: const Icon(Icons.monetization_on_outlined,
+                              color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                Colors.blue, // color de fondo del botón
                           ),
                         ),
                       ],
