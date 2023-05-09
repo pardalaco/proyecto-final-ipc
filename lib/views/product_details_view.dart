@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'book_trips.dart';
+import 'package:drovmar_pfinal/future/future_reservas.dart';
 
 class ProductsDetails extends StatefulWidget {
   final String iconPath;
@@ -51,7 +51,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const BookTrips()),
+                MaterialPageRoute(builder: (context) => const FutureReservas()),
               );
             },
           ),

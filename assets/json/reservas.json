@@ -1,0 +1,38 @@
+{
+    "reservas": [
+    {
+        "name" : "The Grand Budapest Hotel",
+        "location" : "Budapest",
+        "price" : 120.50,
+        "image" : "assets/img/Budapest.jpg",
+        "description" : "Welcome to The Grand Budapest Hotel, where luxury meets tradition. Our hotel is located in the heart of Budapest, just minutes away from all the major attractions. Our spacious rooms and suites are elegantly decorated and offer stunning views of the city. Our restaurants serve the finest cuisine, and our spa and fitness center provide a serene retreat for our guests. Come and experience the grandeur of Budapest at The Grand Budapest Hotel.",
+        "stars" : 5,
+        "nigths" : 3,
+        "entry_date" : "15/06/2023",
+        "departure_date" : "18/06/2023"
+    },
+    {
+        "name" : "The Bellagio",
+        "location" : "Las Vegas",
+        "price" : 199.99,
+        "image" : "assets/img/lasvegas.jpg",
+        "description" : "Welcome to The Bellagio, where luxury and entertainment meet. Our hotel is located on the famous Las Vegas Strip, and our rooms and suites offer stunning views of the city and the surrounding desert. Our restaurants feature world-class cuisine, and our casino provides endless entertainment for our guests. Our spa and fitness center offer a serene retreat from the excitement of the city. Come and experience the magic of Las Vegas at The Bellagio.",
+        "stars" : 5,
+        "nigths" : 6,
+        "entry_date" : "10/09/2023",
+        "departure_date" : "17/09/2023"
+    },
+    {
+        "name" : "The Ritz-Carlton",
+        "location" : "Tokyo",
+        "price" : 299.99,
+        "image" : "assets/img/tokyo.jpg",
+        "description" : "Welcome to The Ritz-Carlton, where luxury meets tradition in the heart of Tokyo. Our hotel features elegant accommodations, world-class dining, and breathtaking views of the city. Our spa and fitness center provide a serene retreat from the bustling city streets. And our rooftop bar offers a spectacular view of Tokyo Tower. Come and experience the magic of Tokyo at The Ritz-Carlton.",
+        "stars" : 5,
+        "nigths" : 1,
+        "entry_date" : "27/12/2023",
+        "departure_date" : "28/12/2023"
+    }
+    
+    ]
+}

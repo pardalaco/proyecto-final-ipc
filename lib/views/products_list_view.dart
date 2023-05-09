@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drovmar_pfinal/future/drawer.dart';
-import 'package:drovmar_pfinal/views/book_trips.dart';
+import 'package:drovmar_pfinal/future/future_reservas.dart';
 
 class ProductsPage extends StatefulWidget {
   final List productsJson;
@@ -24,7 +24,7 @@ class _ProductsPageState extends State<ProductsPage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const BookTrips()),
+                MaterialPageRoute(builder: (context) => const FutureReservas()),
               );
             },
           ),

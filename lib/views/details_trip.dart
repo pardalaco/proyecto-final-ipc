@@ -4,16 +4,25 @@ import 'book_trips.dart';
 class DetailsTrip extends StatefulWidget {
   final String iconPath;
   final String heroTag;
+  final String location;
   final double price;
   final String description;
+  late int stars;
+  final int nigths;
+  final String entry_date;
+  final String departure_date;
 
-  const DetailsTrip({
-    super.key,
-    required this.heroTag,
-    required this.iconPath,
-    required this.price,
-    required this.description,
-  });
+  DetailsTrip(
+      {super.key,
+      required this.heroTag,
+      required this.iconPath,
+      required this.price,
+      required this.description,
+      required this.location,
+      required this.nigths,
+      required this.stars,
+      required this.entry_date,
+      required this.departure_date});
 
   @override
   State<DetailsTrip> createState() => _DetailsTrip();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:drovmar_pfinal/future/future_reservas.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -16,8 +17,13 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('User Information'),
-            onTap: () {},
+            title: const Text('Reservas'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FutureReservas()),
+              );
+            },
           ),
           const Spacer(),
           Container(
