@@ -55,8 +55,8 @@ class FutureReservas extends StatelessWidget {
                         description: r.description,
                         stars: r.stars,
                         nigths: r.nigths,
-                        entry_date: r.entry_date,
-                        departure_date: r.departure_date,
+                        entryDate: r.entryDate,
+                        departureDate: r.departureDate,
                       ),
                     );
                     Navigator.of(context).push(route);
@@ -92,7 +92,7 @@ class FutureReservas extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          "${r.price}€",
+                          "${r.nigths} noches",
                           style: TextStyle(
                             fontSize: 15,
                             color: Colors.black.withOpacity(0.6),

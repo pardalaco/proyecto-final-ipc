@@ -159,7 +159,7 @@ class _DetailsTrip extends State<DetailsTrip> {
                     Row(
                       children: [
                         Text(
-                          "${(widget.price).toStringAsFixed(2)}€",
+                          "${(widget.price * widget.nigths).toStringAsFixed(2)}€",
                           style: TextStyle(
                             fontSize: 25.0,
                             fontWeight: FontWeight.bold,
