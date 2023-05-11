@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 //import 'first_page/container.dart';
+//import 'package:drovmar_pfinal/future/alert.dart';
+import 'package:drovmar_pfinal/models/user_model.dart';
 
 import '/future/future_json.dart';
 
@@ -13,7 +16,7 @@ class LoginPage extends StatefulWidget {
 }
 
 final TextEditingController _usernameController = TextEditingController();
-final TextEditingController _passwordController = TextEditingController();
+final TextEditingController _phoneController = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
   @override
@@ -49,11 +52,14 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(top: 200),
               child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 GestureDetector(
-                    onTap: () {
-                      var route = MaterialPageRoute(
-                          builder: (context) => const FutureJson());
-                      Navigator.of(context).push(route);
-                    },
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => createAlert(
+                            context,
+                            User(
+                              name: _usernameController.text,
+                              phone: _phoneController.text,
+                            ))),
                     child: _loginButon() //MyContainerOrangeWithDecoration()
 
                     ),
@@ -61,20 +67,6 @@ class _LoginPageState extends State<LoginPage> {
             )
           ]),
         ),
-      ),
-    );
-  }
-
-  _circle(double myWidth, double myHeight, EdgeInsets myEdgeInsests) {
-    return Container(
-      transformAlignment: Alignment.bottomRight,
-      width: myWidth,
-      height: myHeight,
-      margin: myEdgeInsests,
-      decoration: BoxDecoration(
-        boxShadow: [_shadow()],
-        color: Colors.blue,
-        shape: BoxShape.circle,
       ),
     );
   }
@@ -109,12 +101,15 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: const EdgeInsets.all(15),
           child: TextField(
-            controller: _passwordController,
-            obscureText: true,
+            controller: _phoneController,
             decoration: const InputDecoration(
-              labelText: 'Password',
-              prefixIcon: Icon(Icons.lock),
+              labelText: 'Telefono',
+              prefixIcon: Icon(Icons.phone),
             ),
+            keyboardType: TextInputType.phone,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ],
           ),
         ),
       ]),
@@ -145,4 +140,40 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  AlertDialog createAlert(BuildContext context, User user) => AlertDialog(
+        title: const Text("Tus datos"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text("Nombre"),
+            Text(user.name),
+            const Text("Teléfono"),
+            Text(user.phone),
+          ],
+        ),
+        actions: [
+          TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.red,
+              ),
+              onPressed: () {
+                debugPrint("Press Cancelar");
+                Navigator.of(context).pop();
+              },
+              child: const Text("Cancelar")),
+          TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                debugPrint("Press Aceptar");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FutureJson()),
+                );
+              },
+              child: const Text("Aceptar")),
+        ],
+      );
 }
