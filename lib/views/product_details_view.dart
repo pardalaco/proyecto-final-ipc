@@ -346,7 +346,8 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                               SizedBox(width: 10),
                               Text(
                                 "Añadir a la cesta",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 10),
                               ),
                             ],
                           ),
@@ -367,7 +368,8 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                               SizedBox(width: 10),
                               Text(
                                 "Reservar",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 10),
                               ),
                             ],
                           ),

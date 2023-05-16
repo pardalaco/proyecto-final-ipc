@@ -4,7 +4,7 @@
         "name" : "Paris Palace",
         "location" : "Paris",
         "price" : 99.99,
-        "image" : "assets/img/Paris.jpg",
+        "image" : "assets/img/paris.jpg",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet magna ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
         "stars" : 4,
         "nigths" : 3,
