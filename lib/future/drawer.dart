@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:drovmar_pfinal/future/future_reservas.dart';
+import 'package:drovmar_pfinal/models/user_model.dart';
 
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+  final User user;
+  const DrawerWidget({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         children: [
-          const UserAccountsDrawerHeader(
-            accountName: Text("Daniel Rovira"),
-            accountEmail: Text("drovmar@upv.com"),
-            currentAccountPicture: CircleAvatar(
+          UserAccountsDrawerHeader(
+            accountName: Text(user.name),
+            accountEmail: Text(user.phone),
+            currentAccountPicture: const CircleAvatar(
               backgroundImage: AssetImage('assets/img/profile.png'),
             ),
           ),

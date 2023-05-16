@@ -8,6 +8,7 @@ import 'package:drovmar_pfinal/views/product_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '/views/products_list_view.dart';
+import 'package:drovmar_pfinal/models/user_model.dart';
 //import 'dart:io';
 import 'dart:developer' as dev;
 
@@ -32,7 +33,8 @@ Future<String> getProducts(BuildContext context) async {
 
 ///En un widget, devolveremos un FutureBuilder, que hará de placeholder hasta que se reciba la información
 class FutureJson extends StatelessWidget {
-  const FutureJson({super.key});
+  final User user;
+  const FutureJson({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +113,7 @@ class FutureJson extends StatelessWidget {
 
           return ProductsPage(
             productsJson: uiProductrs,
+            user: user,
           );
         } else {
           return const CircularProgressIndicator();

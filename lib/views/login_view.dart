@@ -18,6 +18,7 @@ class LoginPage extends StatefulWidget {
 final TextEditingController _usernameController = TextEditingController();
 final TextEditingController _phoneController = TextEditingController();
 
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -170,7 +171,8 @@ class _LoginPageState extends State<LoginPage> {
                 debugPrint("Press Aceptar");
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const FutureJson()),
+                  MaterialPageRoute(
+                      builder: (context) => FutureJson(user: user)),
                 );
               },
               child: const Text("Aceptar")),
