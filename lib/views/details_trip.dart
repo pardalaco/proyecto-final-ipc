@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DetailsTrip extends StatefulWidget {
   final String iconPath;
   final String heroTag;
@@ -32,7 +33,7 @@ class _DetailsTrip extends State<DetailsTrip> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Detalles del producto"),
+        title: const Text("Detalles de la reserva"),
       ),
       body: Container(
         color: Colors.blue.shade50,
