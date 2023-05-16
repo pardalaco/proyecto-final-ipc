@@ -169,10 +169,31 @@ class _LoginPageState extends State<LoginPage> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text("Nombre"),
-            Text(user.name),
-            const Text("Teléfono"),
-            Text(user.phone),
+            const Text(
+              "Nombre",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              user.name,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Teléfono",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              user.phone,
+              style: const TextStyle(fontSize: 16),
+            ),
           ],
         ),
         actions: [

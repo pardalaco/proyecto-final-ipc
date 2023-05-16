@@ -27,6 +27,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
   int _count = 0;
   DateTime? _selectedDate;
   String? _dateString = "";
+  bool _isDateSelected = false;
 
   void _incrementCount() {
     setState(() {
@@ -40,6 +41,64 @@ class _ProductsDetailsState extends State<ProductsDetails> {
         _count--;
       }
     });
+  }
+
+  bool _validateFields() {
+    if (!_isDateSelected && _count <= 0) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Error"),
+          content: const Text(
+              "Selecciona una fecha y indique la cantidad de noches antes de continuar."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("Aceptar"),
+            ),
+          ],
+        ),
+      );
+      return false;
+    } else if (!_isDateSelected) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Error"),
+          content: const Text("Selecciona una fecha antes de continuar."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("Aceptar"),
+            ),
+          ],
+        ),
+      );
+      return false;
+    } else if (_count <= 0) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Error"),
+          content: const Text(
+              "Intruduzca una cantidad de noches antes de continuar."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("Aceptar"),
+            ),
+          ],
+        ),
+      );
+      return false;
+    }
+    return true;
   }
 
   @override
@@ -219,8 +278,11 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                                 .then((value) {
                               _selectedDate = value;
                               if (_selectedDate == null) {
+                                _isDateSelected = false;
+
                                 _dateString = " ";
                               } else {
+                                _isDateSelected = true;
                                 _dateString =
                                     "${_selectedDate?.day}/${_selectedDate?.month}/${_selectedDate?.year}";
                               }
@@ -277,7 +339,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                         const Spacer(),
                         ElevatedButton.icon(
                           onPressed: () {
-                            // Aquí va la función que se ejecutará al presionar el botón
+                            if (_validateFields()) {}
                           },
                           label: Row(
                             children: const [
@@ -298,7 +360,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                         const SizedBox(width: 10),
                         ElevatedButton.icon(
                           onPressed: () {
-                            // Aquí va la función que se ejecutará al presionar el botón
+                            if (_validateFields()) {}
                           },
                           label: Row(
                             children: const [
