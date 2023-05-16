@@ -29,6 +29,7 @@ AlertDialog createAlert(BuildContext context, User u) => AlertDialog(
             ),
             onPressed: () {
               debugPrint("Press Aceptar");
+
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const FutureJson()),

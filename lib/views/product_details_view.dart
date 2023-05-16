@@ -25,6 +25,8 @@ class ProductsDetails extends StatefulWidget {
 
 class _ProductsDetailsState extends State<ProductsDetails> {
   int _count = 0;
+  DateTime? _selectedDate;
+  String? _dateString = "";
 
   void _incrementCount() {
     setState(() {
@@ -193,6 +195,43 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                                 fontWeight: FontWeight.bold,
                               ),
                             )),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.blue, // foreground
+                          ),
+                          child: const Icon(
+                            Icons.calendar_month_outlined,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(1900),
+                                    lastDate: DateTime(2099))
+                                .then((value) {
+                              _selectedDate = value;
+                              if (_selectedDate == null) {
+                                _dateString = " ";
+                              } else {
+                                _dateString =
+                                    "${_selectedDate?.day}/${_selectedDate?.month}/${_selectedDate?.year}";
+                              }
+                              setState(() {});
+                            });
+                          },
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Text("$_dateString")
                       ],
                     ),
                     const SizedBox(height: 10),

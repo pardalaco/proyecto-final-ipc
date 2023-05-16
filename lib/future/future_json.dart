@@ -20,7 +20,7 @@ Future<String> getProducts(BuildContext context) async {
     //var file = File('assets/json/products.json');
     //var data = await file.readAsString();
 
-    dev.log(data.toString());
+    //dev.log(data.toString());
     //return data;
     return data;
   } catch (e) {
