@@ -169,13 +169,15 @@ class _DetailsTrip extends State<DetailsTrip> {
                         const Spacer(),
                         ElevatedButton.icon(
                           onPressed: () {
-                            // Aquí va la función que se ejecutará al presionar el botón
+                            showDialog(
+                                context: context,
+                                builder: (context) => createAlert(context));
                           },
                           label: Row(
                             children: const [
                               SizedBox(width: 10),
                               Text(
-                                "Cancelar reserva",
+                                "Anular reserva",
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],
@@ -198,4 +200,40 @@ class _DetailsTrip extends State<DetailsTrip> {
       ),
     );
   }
+
+  AlertDialog createAlert(BuildContext context) => AlertDialog(
+        title: const Text("Aviso"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Text(
+              "¿Seguro de que querer cancelar la reserva?",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.red,
+              ),
+              onPressed: () {
+                debugPrint("Press Anular reserva");
+                Navigator.of(context).pop();
+              },
+              child: const Text("Anular")),
+          TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.blue,
+              ),
+              onPressed: () {
+                debugPrint("Press Conservar");
+                Navigator.of(context).pop();
+              },
+              child: const Text("Conservar")),
+        ],
+      );
 }
