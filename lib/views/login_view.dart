@@ -17,7 +17,7 @@ class LoginPage extends StatefulWidget {
 
 final TextEditingController _usernameController = TextEditingController();
 final TextEditingController _phoneController = TextEditingController();
-
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
 class _LoginPageState extends State<LoginPage> {
   @override
@@ -53,17 +53,20 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(top: 200),
               child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 GestureDetector(
-                    onTap: () => showDialog(
-                        context: context,
-                        builder: (context) => createAlert(
-                            context,
-                            User(
-                              name: _usernameController.text,
-                              phone: _phoneController.text,
-                            ))),
-                    child: _loginButon() //MyContainerOrangeWithDecoration()
-
-                    ),
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      showDialog(
+                          context: context,
+                          builder: (context) => createAlert(
+                              context,
+                              User(
+                                name: _usernameController.text,
+                                phone: _phoneController.text,
+                              )));
+                    }
+                  },
+                  child: _loginButon(),
+                ),
               ]),
             )
           ]),
@@ -90,30 +93,49 @@ class _LoginPageState extends State<LoginPage> {
         boxShadow: [_shadow()],
         color: Colors.white,
       ),
-      child: Column(children: [
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: TextField(
-            controller: _usernameController,
-            decoration: const InputDecoration(
-                labelText: 'Username', prefixIcon: Icon(Icons.person)),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: TextField(
-            controller: _phoneController,
-            decoration: const InputDecoration(
-              labelText: 'Telefono',
-              prefixIcon: Icon(Icons.phone),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: TextFormField(
+                controller: _usernameController,
+                decoration: const InputDecoration(
+                  labelText: 'Username',
+                  prefixIcon: Icon(Icons.person),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Ingrese su nombre de usuario';
+                  }
+                  return null;
+                },
+              ),
             ),
-            keyboardType: TextInputType.phone,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-            ],
-          ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(
+                  labelText: 'Telefono',
+                  prefixIcon: Icon(Icons.phone),
+                ),
+                keyboardType: TextInputType.phone,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Ingrese su número de teléfono';
+                  }
+                  return null;
+                },
+              ),
+            ),
+          ],
         ),
-      ]),
+      ),
     );
   }
 
