@@ -20,7 +20,7 @@ Este repositorio alberga el proyecto final de la asignatura de Interfaces Person
    - Obtener experiencia práctica en el uso de Flutter, explorando su potencial para crear aplicaciones nativas eficientes y atractivas para iOS y Android.
 
 4. **Documentación y Presentación:**
-   - Crear una documentación clara y detallada, que incluya capturas de pantalla y diagramas, para presentar de manera efectiva el diseño de la interfaz desarrollada.
+   - Crear una documentación, que incluya un vídeo sobre el funcionamiento de la app.
 
 5. **Colaboración y Contribución:**
    - Fomentar la colaboración mediante la creación de un entorno propicio para contribuciones externas, mejoras y correcciones al proyecto.
